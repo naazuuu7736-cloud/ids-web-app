@@ -3,7 +3,8 @@ import numpy as np
 import joblib
 import os
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder=os.path.join(os.path.dirname(__file__), "templates"))
+
 
 # Correct model loading
 model_path = os.path.join(os.path.dirname(__file__), "ids_model.pkl")
@@ -37,4 +38,5 @@ def predict():
 # Run server
 if __name__ == "__main__":
     app.run(debug=True)
+
 
